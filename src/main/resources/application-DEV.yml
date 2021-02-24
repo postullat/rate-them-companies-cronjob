@@ -1,0 +1,41 @@
+server:
+  port: 8081
+
+page:
+  url: https://jobs.dou.ua/vacancies/?category=Java
+jquery:
+  selector: .cat-link:contains($)+em
+
+
+
+fetchStatsJob:
+  jobName: FetchStats_Job
+  cron: 0 0 12 1/1 * ? * #every 24 hours
+  #cron: 0 0 0/12 1/1 * ? * #every 12 hours
+  #cron: 0/40 * * ? * * * #every 40 seconds
+  #cron: 0 0/5 * 1/1 * ? * #every 5 minutes
+
+
+
+# ===============================
+# JPA / HIBERNATE
+# ===============================
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ratethem?serverTimezone=UTC&useSSL=false&characterEncoding=UTF-8
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+
+#Logging Levels by Package
+logging:
+  level:
+    co.ratethem: DEBUG
+    org.springframework: INFO
+    c.n.quartz: ERROR

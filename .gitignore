@@ -1,0 +1,6 @@
+/.idea
+/logs
+/system
+/target
+/rate-them-companies-cronjob.iml
+/src/main/resources/application-PROD.yml
